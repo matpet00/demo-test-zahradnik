@@ -259,6 +259,14 @@
             padding: 0 20px;
             background: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=70&fit=crop') center/cover no-repeat;
         }
+
+        @media (max-width: 768px) {
+            .hamburger-btn { display: block; }
+            .nav-links { display: none; }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav { display: none !important; }
+        }
     </style>
 </head>
 <body>
