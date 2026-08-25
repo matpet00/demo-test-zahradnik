@@ -3,857 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zahradní služby - Kompletní péče o váš zahradu</title>
-    <meta name="description" content="Profesionální zahradní služby - sekání trávy, přímařství, zahradní design a údržba zahrad pro domácnosti i firmy.">
-    <meta property="og:title" content="Zahradní služby - Kompletní péče o zahradu">
-    <meta property="og:description" content="Profesionální zahradní služby - sekání trávy, přímařství, zahradní design a údržba zahrad.">
+    <meta name="description" content="Udržitelná zahradní oáza s přírodní elegancí a moderním přístupem - zahradní služby Návrh, Instalace, Údržba">
+    <title>Zahradní oáza - Návrh a údrž zahrad</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Zahradní oáza">
+    <meta property="og:description" content="Udržitelná zahradní oáza s přírodní elegancí a moderním přístupem">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=70&fit=crop">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="cs_CZ">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zahradní služby - Kompletní péče o zahradu">
-    <meta name="twitter:description" content="Profesionální zahradní služby - sekání trávy, přímařství, zahradní design a údržba zahrad.">
-    
-    <!-- JSON-LD LocalBusiness -->
+    <meta property="og:url" content="https://zahrada.example.com">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Zahradní služby Praha",
-        "image": "https://example.com/logo.png",
-        "description": "Profesionální zahradní služby a údržba zahrad",
-        "telephone": "+420 123 456 789",
-        "email": "info@zahradnisluzby.cz",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Praha",
-            "addressCountry": "CZ"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 50.0755,
-            "longitude": 14.4378
-        }
+        "name": "Zahradní oáza s.r.o.",
+        "description": "Udržitelná zahradní oáza s přírodní elegancí a moderním přístupem",
+        "logo": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=70&fit=crop"
     }
     </script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
-            --primary: #2D5A27;
-            --secondary: #4A7C59;
-            --accent: #FFB400;
-            --bg: #F4F7F4;
-            --text: #1E291A;
-            --muted: #6B8F72;
-            --card-bg: #FFFFFF;
-            --border: #E8F0E8;
+            --color-primary: #2E7D32;
+            --color-secondary: #6D4C41;
+            --color-accent: #FFB300;
+            --color-bg: #F9F9F7;
+            --color-text: #263238;
+            --color-card: #F0F9F0;
+            --color-border: #e0e0e0;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
         }
-        
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        
+
         html {
-            font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
             scroll-behavior: smooth;
         }
-        
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
+
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            line-height: 1.2;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.2s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
+
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            loading="lazy";
         }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 2rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
-        
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+
+        ul {
+            list-style: none;
         }
-        
-        .hero-canvas {
-            position: absolute;
+
+        /* Focus styles for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0ms !important;
+                animation-duration: 0ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        p { margin-bottom: 1rem; }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            border: 2px solid var(--color-accent);
+            background: transparent;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-2px);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* Hamburger menu */
+        .hamburger-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--color-primary);
+            margin: 5px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 60%;
+            max-width: 360px;
+            background: var(--color-bg);
+            padding-top: 80px;
+            transform: translateX(100%);
+            transition: transform 0.4s ease;
+            z-index: 99;
+        }
+
+        .mobile-nav.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 1.25rem;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            background: rgba(249, 249, 247, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: white;
-            max-width: 860px;
-            padding: 2rem;
-        }
-        
-        .hero-heading {
-            font-size: clamp(2.5rem, 8vw + 1rem, 5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-subheading {
-            font-size: clamp(1.2rem, 3vw + 0.5rem, 1.8rem);
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--accent);
-            color: var(--text);
-            font-weight: 500;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 180, 0, 0.3);
-        }
-        
-        .cta-btn:focus-visible {
-            outline: 2px solid var(--text);
-            outline-offset: 4px;
-        }
-        
-        /* Sections */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary);
-            color: white;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-        }
-        
-        .section-heading {
-            font-size: clamp(2rem, 4vw + 1rem, 3rem);
-            margin-bottom: 1rem;
-        }
-        
-        .section-description {
-            font-size: 1.125rem;
-            color: var(--muted);
-            max-width: 660px;
-            margin: 0 auto;
-        }
-        
-        /* Services Cards */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .service-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(45, 90, 39, 0.15);
-        }
-        
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .service-card p {
-            color: var(--muted);
-            font-size: 0.9375rem;
-            line-height: 1.5;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-        
-        .contact-icon {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            color: var(--primary);
-        }
-        
-        .contact-detail h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.25rem;
-        }
-        
-        .contact-detail p {
-            color: var(--muted);
-            font-size: 1rem;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem 1rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-        
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9375rem;
-            line-height: 1.6;
-            margin-top: 1rem;
-        }
-        
-        .footer-links h4, .footer-contact h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9375rem;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .footer-contact ul {
-            list-style: none;
-        }
-        
-        .footer-contact li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-contact li:hover {
-            color: var(--accent);
-        }
-        
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            height: 80px;
         }
-        
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.6);
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
             font-size: 0.875rem;
+            color: var(--color-text);
+            position: relative;
+            padding-bottom: 4px;
         }
-        
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: inline-flex;
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 1.125rem;
-            transition: background 0.2s ease, color 0.2s ease;
-            margin-left: 0.25rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--accent);
-            color: var(--text);
-        }
-        
-        /* Focus states */
-        button:focus-visible, a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 4px;
-        }
-        
-        /* Lazy load */
-        img[data-lazy] {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        img.loaded {
-            opacity: 1;
+            text-align: center;
+            padding: 0 20px;
+            background: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=70&fit=crop') center/cover no-repeat;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" aria-label="Hlavní navigace">
-        <div class="max-w-1200 mx-auto px-2">
-            <nav class="flex justify-between items-center py-4">
-                <a href="#" class="font-display text-2xl font-bold tracking-tight">
-                    Zahradní <span style="color: var(--accent);">Služby</span>
-                </a>
-                
-                <button 
-                    class="md:hidden hamburger-btn"
-                    aria-label="Otevřít menu"
-                    aria-expanded="false"
-                >
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                
-                <ul class="hidden md:flex gap-8">
-                    <li><a href="#about" class="text-base">O nás</a></li>
-                    <li><a href="#services" class="text-base">Služby</a></li>
-                    <li><a href="#about" class="text-base">Reference</a></li>
-                    <li><a href="#contact" class="text-base">Kontakt</a></li>
-                </ul>
+    <header class="site-header">
+        <div class="container">
+                <div class="header-inner">
+                    <a href="#" class="logo">Zahradní oáza</a>
+                    <nav class="nav-links">
+                        <a href="#home" class="nav-link">Domů</a>
+                        <a href="#about" class="nav-link">O nás</a>
+                        <a href="#services" class="nav-link">Služby</a>
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                        <a href="#process" class="nav-link">Proces</a>
+                        <a href="#references" class="nav-link">Reference</a>
+                        <a href="#contact" class="nav-link">Kontakt</a>
+                    </nav>
+                    <button class="hamburger-btn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#home">Domů</a>
+                <a href="#about">O nás</a>
+                <a href="#services">Služby</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#process">Proces</a>
+                <a href="#references">Reference</a>
+                <a href="#contact">Kontakt</a>
             </nav>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <canvas class="hero-canvas" id="threeCanvas" aria-hidden="true"></canvas>
-        
-        <div class="hero-content">
-            <h1 class="hero-heading">Kompletní péče o váš zahradu</h1>
-            <p class="hero-subheading">Profesionální zahradní služby pro domácnosti i firmy – od sekání trávy po složité zahradní úpravy. Váš venkovní prostor si zaslouží nejlepší péči.</p>
-            <a href="#services" class="cta-btn">Naše služby</a>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-header">
-            <span class="section-tag">O nás</span>
-            <h2 class="section-heading">Odlidová péče o zahradu</h2>
-            <p class="section-description">Víme, že každá zahrada je unikátní. Proto nabízíme individualizovaný přístup a služby šité na míru vašim potřebám a přání.</p>
-        </div>
-        
-        <div class="about-content">
-            <div>
-                <p>Společnost Zahradní služby vznikla s cílem propojit lidi s přírodou vytvářením a udržováním krásných zdravých zahrad. Naše tým odborníků má let zkušeností s různorodými typy zahrad – od malých městských pozemků po rozsáhlé parkové komplexy.</p>
-                <p>Věříme, že kvalitní péče o zahradu přispívá k životní kvalitě a duševní pohodě. Proto se neustále vzděláváme a používáme moderní přístupy i ekologické postupy.</p>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <h1 class="hero-headline">Vytvoříme vaši zahradní oázu</h1>
+                <a href="#contact" class="btn hero-cta">Kontaktujte nás</a>
+            </section>
+
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=70&fit=crop" alt="Zelená zahrada">
+                    </div>
+                    <div class="about-content">
+                        <h2>O nás</h2>
+                        <p>Jsme tým zahradních designérů a realizátorů, kteří věří v udržitelnost, přírodní eleganci a moderní přístup. Vytváříme zahrady, které nejen vypadají úžasně, ale i vydrží.</p>
+                        <p>Naše služby zahrnují návrh, instalaci a údržbu zahrad na klíč, vždy s ohledem na místní klima a potřeby klienta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="services">
+                <div class="container">
+                    <h2 class="section-title">Naše služby</h2>
+                    <p class="section-subtitle">Kompletní zahradní péče od návrhu po realizaci.</p>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3>Návrh zahrad</h3>
+                            <p>Kreativní návrhy zahrad respektující přírodu a vaše přání.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Instalace</h3>
+                            <p>Profesionální instalace rostlin, osvětlení a doplňků.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Údržba</h3>
+                            <p>Pravidelná péče pro udržení krásy vaší zahrady po celý rok.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="portfolio">
+                <div class="container">
+                    <h2 class="section-title">Naše portfolio</h2>
+                    <p class="section-subtitle">Ukázka vybraných zahrad, které jsme vytvořili.</p>
+                    <div class="portfolio-filters">
+                        <button class="portfolio-filter active" data-filter="all">Všechny</button>
+                        <button class="portfolio-filter" data-filter="residential">Rezidenční</button>
+                        <button class="portfolio-filter" data-filter="commercial">Komerční</button>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="residential">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=70&fit=crop" alt="Rezidenční zahrada">
+                            <div class="caption">Soukromá zahrada</div>
+                        </div>
+                        <div class="portfolio-item" data-category="commercial">
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=70&fit=crop" alt="Komerční zahrada">
+                            <div class="caption">Firemní park</div>
+                        </div>
+                        <div class="portfolio-item" data-category="residential">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=70&fit=crop" alt="Zahrada s bazénem">
+                            <div class="caption">Zahrada s bazénem</div>
+                        </div>
+                        <div class="portfolio-item" data-category="commercial">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=70&fit=crop" alt="Hotelová zahrada">
+                            <div class="caption">Hotelový resort</div>
+                        </div>
+                        <div class="portfolio-item" data-category="residential">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=70&fit=crop" alt="Minimalistická zahrada">
+                            <div class="caption">Minimalistická zahrada</div>
+                        </div>
+                        <div class="portfolio-item" data-category="commercial">
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=70&fit=crop" alt="Office garden">
+                            <div class="caption">Kancelářská zahrada</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process" class="process">
+                <div class="container">
+                    <h2 class="section-title">Náš proces</h2>
+                    <p class="section-subtitle">Jak pracujeme, abychom vytvořili dokonalou zahradu.</p>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <div class="process-step-content">
+                                <h4>Konzultace</h4>
+                                <p>Poslechneme si vaše přání, provedeme analýzu místa a navrhneme koncept.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <div class="process-step-content">
+                                <h4>Návrh</h4>
+                                <p>Vytvoříme detailní plán výsadby, osvětlení a cest.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <div class="process-step-content">
+                                <h4>Realizace</h4>
+                                <p>Zrealizujeme zahradu podle návrhu včetně instalace rostlin a doplňků.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <div class="process-step-content">
+                                <h4>Údržba</h4>
+                                <p>Poskytneme pravidelnou péči a poradenství pro dlouhodobé zdraví zahrady.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="references" class="references">
+                <div class="container">
+                    <h2 class="section-title">Reference</h2>
+                    <p class="section-subtitle">Co říkají naši klienti.</p>
+                    <div class="references-grid">
+                        <div class="reference-card">
+                            <p>"Profesionální přístup, krásná zahrada, přesně podle našich představ."</p>
+                            <div class="client"> – Novákovi, Praha</div>
+                        </div>
+                        <div class="reference-card">
+                            <p>"Rychlá komunikace a kvalitní práce. Zahrada je náš nový domov."</p>
+                            <div class="client"> – Svobodovi, Brno</div>
+                        </div>
+                        <div class="reference-card">
+                            <p>"Skvělý servis, údržba probíhá bez problémů."</p>
+                            <div class="client"> – Dostálová, Ostrava</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <div class="container">
+                    <h2 class="section-title">Kontakt</h2>
+                    <p class="section-subtitle">Napište nám a domluvte si schůzku.</p>
+                    <div class="contact-form">
+                        <h3>Pošlete nám zprávu</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Jméno a příjmení</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Zpráva</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Odeslat</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div><span class="label">Telefon:</span> <span class="value">+420 123 456 789</span></div>
+                        <div><span class="label">E-mail:</span> <span class="value">info@zahradnioaza.cz</span></div>
+                        <div><span class="label">Adresa:</span> <span class="value">Na Výsluní 123, Praha 10</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <a href="#" class="logo">Zahradní oáza</a>
+                <div class="quick-links">
+                    <a href="#about">O nás</a>
+                    <a href="#services">Služby</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#process">Proces</a>
+                    <a href="#references">Reference</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                </div>
+                <p>© 2023 Zahradní oáza s.r.o. Všechna práva vyhrazena.</p>
             </div>
-            <div>
-                <img 
-                    src="https://images.unsplash.com/photo-1505536169462-a7a79f0cd58c?w=600&h=400&fit=crop"
-                    alt="Krásná zahrada s křovinami a trávou"
-                    loading="lazy"
-                    data-lazy
-                >
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="section" style="background-color: var(--bg);">
-        <div class="section-header">
-            <span class="section-tag">Služby</span>
-            <h2 class="section-heading">Kompletní zahradní služby</h2>
-            <p class="section-description">Nabízíme široké spektrum služeb pro údržbu a vytváření zahrad všeho typu.</p>
-        </div>
-        
-        <div class="services-grid">
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 2H15a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V7zM7 2H5a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V7zM3 2v1a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1"/>
-                    </svg>
-                </div>
-                <h3>Sekání a údržba trávy</h3>
-                <p>Profesionální sekání, hnojení a péče o trávník pro krásný a zdravý vzhled vaší zahrady po celý rok.</p>
-            </article>
-            
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                </div>
-                <h3>Střih a tvarování</h3>
-                <p>Přesný střih keřů, stromů a živých plotů udržuje zahradu útulně a řádně po celý roční období.</p>
-            </article>
-            
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                    </svg>
-                </div>
-                <h3>Povázání a terény</h3>
-                <p>Stavební práce pro úpravu terénu, stavebníky a terénní úpravy pro efektivní využití prostoru vaší zahrady.</p>
-            </article>
-            
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    </svg>
-                </div>
-                <h3>Nabízky a osiva</h3>
-                <p>Výběr a odborná výsadba dřevin, květin a trávníku s ohledem na půdní podmínky a klimatické zázemie.</p>
-            </article>
-            
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                    </svg>
-                </div>
-                <h3>Izolace a opatření</h3>
-                <p>Příprava a aplikace krycí hmoty a ochranných vrstev pro trvalou hodnotu vaší zahradních prvků.</p>
-            </article>
-            
-            <article class="service-card">
-                <div class="service-icon" style="filter: var(--primary);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="3 6 5 6 21 6"/>
-                        <path d="M3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/>
-                        <line x1="10" y1="11" x2="10" y2="17"/>
-                        <line x1="14" y1="11" x2="14" y2="17"/>
-                    </svg>
-                </div>
-                <h3>Nakopávání a odvoz</h3>
-                <p>Pravidelná odstraňování listí a organického odpadu pro čistou a zdravou zahradu po celý rok.</p>
-            </article>
-        </div>
-    </section>
-    
-    <!-- Projects/Reference Section -->
-    <section class="section" style="background-color: var(--primary); color: white;">
-        <div class="section-header">
-            <span class="section-tag">Reference</span>
-            <h2 class="section-heading">Naše realizedé projekty</h2>
-            <p class="section-description">Podívejte se na několik našich úspěšných zahradních projektů.</p>
-        </div>
-        
-        <div class="max-w-1200 mx-auto px-2 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <article 
-                class="group rounded-lg overflow-hidden transition-transform duration-500 hover:scale-[105%]"
-                style="background: white; color: var(--primary);"
-            >
-                <img 
-                    src="https://images.unsplash.com/photo-1581091011053-9c9d9b9d8e02?w=600&h=400&fit=crop"
-                    alt="Výsledek zahradních prací"
-                    loading="lazy"
-                    style="width: 100%; height: 200px; object-fit: cover;"
-                    decoding="async"
-                >
-                <div class="p-4">
-                    <h3 class="font-display font-medium mb-2">Moderní zahrada</h3>
-                    <p class="text-sm opacity-80">Praha 6</p>
-                </div>
-            </article>
-            
-            <article 
-                class="group rounded-lg overflow-hidden transition-transform duration-500 hover:scale-[105%]"
-                style="background: white; color: var(--primary);"
-            >
-                <img 
-                    src="https://images.unsplash.com/photo-1576047235589-aba7a5ba5bb0?w=600&h=400&fit=crop"
-                    alt="Zahradní terasa"
-                    loading="lazy"
-                    style="width: 100%; height: 200px; object-fit: cover;"
-                    decoding="async"
-                >
-                <div class="p-4">
-                    <h3 class="font-display font-medium mb-2">Klasická zahrada</h3>
-                    <p class="text-sm opacity-80">Praha 4</p>
-                </div>
-            </article>
-            
-            <article 
-                class="group rounded-lg overflow-hidden transition-transform duration-500 hover:scale-[105%]"
-                style="background: white; color: var(--primary);"
-            >
-                <img 
-                    src="https://images.unsplash.com/photo-1516971812195-5779dba2314c?w=600&h=400&fit=crop"
-                    alt="Přednost květenství"
-                    loading="lazy"
-                    style="width: 100%; height: 200px; object-fit: cover;"
-                    decoding="async"
-                >
-                <div class="p-4">
-                    <h3 class="font-display font-medium mb-2">Květinová zahrada</h3>
-                    <p class="text-sm opacity-80">Praha 8</p>
-                </div>
-            </article>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-header">
-            <span class="section-tag">Kontakt</span>
-            <h2 class="section-heading">Máte zájem o naše služby?</h2>
-            <p class="section-description">Rádi odpovíme na vaše dotazy a vytvoříme nabídku šitou na míru.</p>
-        </div>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.33 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.33-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9c-.28-.34-.38-.71-.4-1.1zM12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z"/>
-                    <path d="M8 12l-1 2 3 3"/>
-                </svg>
-                <div class="contact-detail">
-                    <h4>Adresa</h4>
-                    <p>Praha 6, Česká republika</p>
-                </div>
-            </div>
-            
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.33 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.33-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9c-.28-.34-.38-.71-.4-1.1z"/>
-                    <circle cx="12" cy="12" r="1"/>
-                </svg>
-                <div class="contact-detail">
-                    <h4>Telefon</h4>
-                    <p>+420 123 456 789</p>
-                </div>
-            </div>
-            
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.89 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.89-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                <div class="contact-detail">
-                    <h4>E-mail</h4>
-                    <p>info@zahradnisluzby.cz</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content max-w-1200 mx-auto px-2">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2 class="font-display text-2xl font-bold tracking-tight">
-                        Zahradní <span style="color: var(--accent);">Služby</span>
-                    </h2>
-                    <p>Profesionální péče o vaši zahradu s důrazem na kvalitu aDetail.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Odkazy</h4>
-                    <ul>
-                        <li><a href="#about">O nás</a></li>
-                        <li><a href="#services">Služby</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Kontakt</h4>
-                    <ul>
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="2" y1="12" x2="22" y2="12"/>
-                            </svg>
-                            +420 123 456 789
-                        </li>
-                        <li>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.89 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.89-2 2-2z"/>
-                            </svg>
-                            info@zahradnisluzby.cz
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>2024 Zahradní služby. Všechna práva vyhrazena.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">F</a>
-                    <a href="#" aria-label="Instagram">I</a>
-                    <a href="#" aria-label="LinkedIn">L</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Three.js Script -->
-    <script type="module" src="https://unpkg.com/three@0.160.0/build/three.module.js"></script>
-    <script type="module">
-        // Three.js interaktivní scéna
-        import * as THREE from 'three';
-        
-        const canvas = document.getElementById('threeCanvas');
-        if (!canvas) exit();
-        
-        // Respektuj prefers-reduced-motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            canvas.style.opacity = '0';
-            exit();
-        }
-        
-        // Scene setup
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x2D5A27);
-        
-        // Camera
-        const camera = new THREE.PerspectiveCamera(
-            45,
-            canvas.clientWidth / canvas.clientHeight,
-            0.1,
-            1000
-        );
-        camera.position.z = 20;
-        
-        // Renderer
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        canvas.appendChild(renderer.domElement);
-        
-        // Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-        scene.add(ambientLight);
-        
-        const directionalLight = new THREE.DirectionalLight(0xffb400, 0.8);
-        directionalLight.position.set(5, 10, 7.5);
-        scene.add(directionalLight);
-        
-        // Particles - representation of leaves/seed
-        const particlesCount = 500;
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesArray = new Float32Array(particlesCount * 3);
-        
-        for (let i = 0; i < particlesCount * 3; i++) {
-            particlesArray[i] = (Math.random() - 0.5) * 30;
-        }
-        
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesArray, 3));
-        
-        const particlesMaterial = new THREE.PointsMaterial({
-            color: 0xFFB400,
-            size: 0.2,
-            transparent: true,
-            opacity: 0.8
-        });
-        
-        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particles);
-        
-        // Objects - small spheres representing plants
-        const objects = [];
-        for (let i = 0; i < 20; i++) {
-            const geometry = new THREE.SphereGeometry(0.3 + Math.random() * 0.7, 16, 16);
-            const material = new THREE.MeshStandardMaterial({
-                color: new THREE.Color().setHSL(Math.random() * 0.1 + 0.2, 0.5, 0.5 + Math.random() * 0.3),
-                roughness: 0.3,
-                metalness: 0.1
+        </footer>
+
+        <script>
+            // Hamburger menu toggle
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const mobileNav = document.querySelector('.mobile-nav');
+
+            hamburgerBtn.addEventListener('click', () => {
+                hamburgerBtn.classList.toggle('active');
+                mobileNav.classList.toggle('open');
             });
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(
-                (Math.random() - 0.5) * 25,
-                (Math.random() - 0.5) * 25,
-                (Math.random() - 0.5) * 25
-            );
-            mesh.scale.set(1, 1 + Math.random() * 0.5, 1);
-            scene.add(mesh);
-            objects.push(mesh);
-        }
-        
-        // Mouse interaction
-        const mouse = new THREE.Vector2();
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        });
-        
-        // Interaction with objects
-        const raycaster = new THREE.Raycaster();
-        
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            // Rotate particles
-            particles.rotation.y += 0.001;
-            
-            // Make objects react to mouse
-            objects.forEach((obj, i) => {
-                obj.rotation.y += 0.01;
-                obj.rotation.x += 0.01;
-            });
-            
-            // Raycasting for hover effect
-            raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObjects(objects);
-            
-            if (intersects.length > 0) {
-                // Slight scale increase on hover
-                intersects[0].object.scale.set(1.2, 1.2, 1.2);
-            } else {
-                objects.forEach(obj => {
-                    obj.scale.set(1, 1 + Math.random() * 0.1, 1);
+
+            // Close mobile nav when a link is clicked
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerBtn.classList.remove('active');
+                    mobileNav.classList.remove('open');
                 });
-            }
-            
-            renderer.render(scene, camera);
-        }
-        
-        animate();
-        
-        // Resize handling
-        window.addEventListener('resize', () => {
-            camera.aspect = canvas.clientWidth / canvas.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-        });
-    </script>
-</body>
+            });
+        </script>
+    </body>
 </html>
